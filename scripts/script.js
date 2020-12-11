@@ -49,9 +49,9 @@ function churrascometro(){
 }
 
 function toKg(e1){
-    return Math.ceil(e1 / 1000);
+    return e1 / 1000;
 }
 
 function toL(e1){
-    return Math.ceil(e1 / 1000);
+    return e1 / 1000;
 }
