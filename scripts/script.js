@@ -3,6 +3,7 @@ botao.addEventListener("click", churrascometro);
 
 function churrascometro(){
     let inputs = document.getElementsByClassName("inputs");
+    let outputs = document.getElementsByClassName("li-item");
 
     let adultos = Number(inputs[0].value);
     let criancas = Number(inputs[1].value);
@@ -24,6 +25,9 @@ function churrascometro(){
         carne = 400 * pessoas;
         cerveja = 1200 * adultos;
         refrigerante_agua = 1000 * pessoas;
+        outputs[0].innerHTML = "Carne: " + toKG(carne);
+        outputs[1].innerHTML = "Cerveja: " + cerveja;
+        outputs[2].innerHTML = "Refrigerante/agua: " + refrigerante_agua;
     }else if(duracao > 6){
         /* 
         *  650 g carne por pessoa
@@ -34,9 +38,12 @@ function churrascometro(){
         carne = 650 * pessoas;
         cerveja = 2000 * adultos;
         refrigerante_agua = 1500 * pessoas;
+        outputs[0].innerHTML = "Carne: " + carne;
+        outputs[1].innerHTML = "Cerveja: " + cerveja;
+        outputs[2].innerHTML = "Refrigerante/agua: " + refrigerante_agua;
     }
-    
-    console.log(carne)
-    console.log(cerveja)
-    console.log(refrigerante_agua)
+}
+
+function toKG(e1){
+    return e1 / 1000;
 }
